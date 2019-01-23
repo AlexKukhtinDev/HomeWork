@@ -17,32 +17,32 @@ class Person {
             newPerson = new Person();
         }
 
-        public Builder Name(String name) {
+        public Builder name(String name) {
             newPerson.name = name;
             return this;
         }
 
-        public Builder Surname(String surname) {
+        public Builder surname(String surname) {
             newPerson.surname = surname;
             return this;
         }
 
-        public Builder Age(int age) {
+        public Builder age(int age) {
             newPerson.age = age;
             return this;
         }
 
-        public Builder Height(int height) {
+        public Builder height(int height) {
             newPerson.height = height;
             return this;
         }
 
-        public Builder Weight(int weight) {
+        public Builder weight(int weight) {
             newPerson.weight = weight;
             return this;
         }
 
-        public Builder Parents(Set<Person> parents) {
+        public Builder parents(Set<Person> parents) {
             newPerson.parents = parents;
             return this;
         }
