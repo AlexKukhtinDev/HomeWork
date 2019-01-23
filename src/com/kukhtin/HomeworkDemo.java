@@ -5,11 +5,11 @@ import java.util.HashMap;
 public class HomeworkDemo {
     public static void main(String[] args) {
         Person myPerson = new Person.Builder()
-                .Name("Alex")
-                .Surname("Cooper")
-                .Age(32)
-                .Height(165)
-                .Weight(70)
+                .name("Alex")
+                .surname("Cooper")
+                .age(32)
+                .height(165)
+                .weight(70)
                 .build();
         HashMap<String, String> h1 = new HashMap<String, String>();
         h1.put("1", "first");
