@@ -20,10 +20,10 @@ public final class Immutable {
         return testMap;
     }
 
-    public Immutable(int i, String n, Map<String, String> map) {
+    public Immutable(int id, String name, Map<String, String> map) {
         System.out.println("Performing Deep Copy for Object initialization");
-        this.id = i;
-        this.name = n;
+        this.id = id;
+        this.name = name;
         Map<String, String> tempMap = new HashMap<String, String>();
         String key;
 

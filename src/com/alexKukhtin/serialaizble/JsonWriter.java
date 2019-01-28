@@ -1,7 +1,5 @@
 package com.alexKukhtin.serialaizble;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class JsonWriter {
@@ -26,33 +24,30 @@ public class JsonWriter {
         return json;
     }
 
-    private static String encodeTriangle(@NotNull Triangle triangle) {
-        String json = "\t\"Triangle\" : {\n";
+    private static String encodeTriangle(Triangle triangle) {
+        StringBuilder json = new StringBuilder("\t\"Triangle\" : {\n");
         double side = triangle.getSide();
         for (int index = 0; index < 1; index++) {
-            json += "\t\t\"side\"" + index + " : ";
-            json += "\"" + side + "\"";
-            json += ",\n";
+            json.append("\t\t\"side\"").append(index).append(" : ");
+            json.append("\"").append(side).append("\"");
+            json.append(",\n");
         }
-        return json;
+        return json.toString();
     }
 
-    private static String encodeSquare(@NotNull Square square) {
+    private static String encodeSquare(Square square) {
         String json = "\t\"Square\" : {\n";
         json += "\t\t\"radius\" : \"" + square.getRadius() + "\"\n";
         json += "\t}";
         return json;
     }
 
-    private static String encodeCircle(@NotNull Circle circle) {
-        String json = "\t\"Circle\" : {\n";
-        json += "\t\t\"Area\" : \"" + circle.getArea() + "\"\n";
-        json += "\t}";
+    private static String encodeCircle(Circle circle) {
+        String json = "\t\"Circle\" : {\n" + ("\t\t\"Area\" : \"" + circle.getArea() + "\"\n") + "\t}";
         return json;
     }
 
-    @NotNull
-    private static String encodeGroup(@NotNull Group group) {
+    private static String encodeGroup(Group group) {
         StringBuilder json = new StringBuilder();
         json.append("\t\"Group\" : {\n");
         List<Shape> shapes = group.getShapes();
