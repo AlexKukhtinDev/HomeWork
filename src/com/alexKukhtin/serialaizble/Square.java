@@ -3,7 +3,6 @@ package com.alexKukhtin.serialaizble;
 public class Square implements Shape {
     private double radius;
 
-
     public Square(double radius) {
         this.radius = radius;
     }
@@ -11,7 +10,6 @@ public class Square implements Shape {
     public double getRadius() {
         return radius;
     }
-
 
     @Override
     public void print() {

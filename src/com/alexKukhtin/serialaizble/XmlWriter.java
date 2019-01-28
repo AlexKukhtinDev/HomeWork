@@ -1,7 +1,5 @@
 package com.alexKukhtin.serialaizble;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class XmlWriter {
@@ -25,29 +23,28 @@ public class XmlWriter {
         return xml;
     }
 
-    private static String encodeTriangle(@NotNull Triangle triangle) {
+    private static String encodeTriangle(Triangle triangle) {
         String xml = "<Triangle>\n";
         xml += "\t<side>" + triangle.getSide() + "</side>\n";
         xml += "</Triangle>\n";
         return xml;
     }
 
-    private static String encodeSquare(@NotNull Square square) {
+    private static String encodeSquare(Square square) {
         String xml = "<Square>\n";
         xml += "\t<side>" + square.getRadius() + "</side>\n";
         xml += "</Square>\n";
         return xml;
     }
 
-    private static String encodeCircle(@NotNull Circle circle) {
+    private static String encodeCircle(Circle circle) {
         String xml = "<Circle>\n";
         xml += "\t<area>" + circle.getArea() + "</area>\n";
         xml += "</Circle>\n";
         return xml;
     }
 
-    @NotNull
-    private static String encodeGroup(@NotNull Group group) {
+    private static String encodeGroup(Group group) {
         StringBuilder xml = new StringBuilder();
         xml.append("<Group>\n\t<shapes>\n");
         List<Shape> shapes = group.getShapes();
