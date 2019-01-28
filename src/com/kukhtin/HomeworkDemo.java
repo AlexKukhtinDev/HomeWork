@@ -1,6 +1,7 @@
 package com.kukhtin;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class HomeworkDemo {
     public static void main(String[] args) {
@@ -11,35 +12,32 @@ public class HomeworkDemo {
                 .height(165)
                 .weight(70)
                 .build();
-        HashMap<String, String> h1 = new HashMap<String, String>();
-        h1.put("1", "first");
-        h1.put("2", "second");
 
-        String s = "original";
+        Map<String, String> hashMap = new HashMap<>();
+        hashMap.put("1", "first");
+        hashMap.put("2", "second");
+
+        String string = "original";
 
         int i = 10;
 
-        Immutable ce = new Immutable(i, s, h1);
+        Immutable immutable = new Immutable(i, string, hashMap);
 
-        //Lets see whether its copy by field or reference
-        System.out.println(s == ce.getName());
-        System.out.println(h1 == ce.getTestMap());
-        //print the ce values
-        System.out.println("ce id:" + ce.getId());
-        System.out.println("ce name:" + ce.getName());
-        System.out.println("ce testMap:" + ce.getTestMap());
-        //change the local variable values
+        System.out.println(string == immutable.getName());
+        System.out.println(hashMap == immutable.getTestMap());
+
+        System.out.println("Immutable id:" + immutable.getId());
+        System.out.println("Immutable name:" + immutable.getName());
+        System.out.println("Immutable testMap:" + immutable.getTestMap());
+
         i = 20;
-        s = "modified";
-        h1.put("3", "third");
-        //print the values again
-        System.out.println("ce id after local variable change:" + ce.getId());
-        System.out.println("ce name after local variable change:" + ce.getName());
-        System.out.println("ce testMap after local variable change:" + ce.getTestMap());
+        string = "modified";
+        hashMap.put("3", "third");
 
-        HashMap<String, String> hmTest = ce.getTestMap();
+        System.out.println("Immutable id after local variable change:" + immutable.getId());
+        System.out.println("Immutable name after local variable change:" + immutable.getName());
+        System.out.println("Immutable testMap after local variable change:" + immutable.getTestMap());
+        Map<String, String> hmTest = immutable.getTestMap();
         hmTest.put("4", "new");
-
-        System.out.println("ce testMap after changing variable from accessor methods:" + ce.getTestMap());
     }
 }

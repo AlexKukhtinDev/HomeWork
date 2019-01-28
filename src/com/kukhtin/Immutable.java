@@ -1,12 +1,12 @@
 package com.kukhtin;
 
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Map;
 
 public final class Immutable {
     private final int id;
     private final String name;
-    private final HashMap<String, String> testMap;
+    private final Map<String, String> testMap;
 
     public int getId() {
         return id;
@@ -16,20 +16,20 @@ public final class Immutable {
         return name;
     }
 
-    public HashMap<String, String> getTestMap() {
+    public Map<String, String> getTestMap() {
         return testMap;
     }
 
-    public Immutable(int i, String n, HashMap<String, String> hm) {
+    public Immutable(int i, String n, Map<String, String> map) {
         System.out.println("Performing Deep Copy for Object initialization");
         this.id = i;
         this.name = n;
-        HashMap<String, String> tempMap = new HashMap<String, String>();
+        Map<String, String> tempMap = new HashMap<String, String>();
         String key;
-        Iterator<String> it = hm.keySet().iterator();
-        while (it.hasNext()) {
-            key = it.next();
-            tempMap.put(key, hm.get(key));
+
+        for (String s : map.keySet()) {
+            key = s;
+            tempMap.put(key, map.get(key));
         }
         this.testMap = tempMap;
     }
